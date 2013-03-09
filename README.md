@@ -14,3 +14,6 @@ Based on this tutorial: https://nicolas.perriault.net/code/2012/dead-easy-yet-po
 	source Envs/soniacs/activate
 	cd Sites/dev/soniacs
 	python build.py
+
+## Generate Static Site
+	python build.py build
