@@ -1,11 +1,24 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block body_class %}home{% endblock body_class %}
 
+{% block body %}
+	<header class="site-header">
+		<div class="container">
+			<h1>Hi!</h1>
+			<p>I'm Sonia. I design &amp; develop<br>simple &amp; easy to use interfaces.</p>
+			{% include '_nav.html' %}
+		</div>
+	</header>
+	<div class="site-content">
+		<div class="container">
+			<div class="header-img"></div>
+			<h2>- About Me -</h2>
 
+			<p>I come from graphic design but I like to code and build things a little bit more. Most of my experience is in frontend development (HTML5, CSS3, JavaScript) but I also have some basic knowledge of PHP and Python. I'm not afraid of code. And as design goes, I like it simple.</p>
 
-
-
-
-
-{% endblock content %}
+			<p>I live in Porto, Portugal and I'm available to work on small to medium size projects, near home or very, very far. If you'd like to work with me, please <a href ="">contact me</a>. I'll be happy to answer any questions you may have.</p>
+		</div>
+	</div>
+	{% include '_footer.html' %}
+{% endblock body %}

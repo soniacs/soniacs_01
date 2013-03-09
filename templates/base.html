@@ -3,9 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Sonia Soares | Web Design &amp; Development</title>
+		{% block css %}
+		{% endblock css %}
+		{% block js_head %}
+		{% endblock js_head %}
 	</head>
-	<body>
-		{% block content %}
-		{% endblock content %}
+	<body class="{% block body_class %}{% endblock body_class %}">
+		{% block body %}
+		{% endblock body %}
+		{% block js_footer %}
+		{% endblock js_footer %}
 	</body>
 </html>
