@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body_class %}contact{% endblock body_class %}
+
+{% block body %}
+	{% include '_header.html' %}
+
+	<div class="site-content">
+		<div class="container">
+			<div class="header-img"></div>
+			<h2>- Get in Touch -</h2>
+			<p class="header-intro">Say "Hi" or inquire me about a project you have in mind.</p>
+
+			{% block content %}
+				{% include "_contact-form.html" %}
+			{% endblock content %}
+		</div>
+	</div>
+	{% include '_footer.html' %}
+{% endblock body %}

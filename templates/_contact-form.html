@@ -1,0 +1,39 @@
+<p class="info">If it's a project you'd like to talk about, don't forget to describe it as best as possible and answer the fields "Project Budget" and "Project Deadline". Please allow up to 2 business days for a reply.</p>
+
+<form action="{{ url_for('static', filename='php/send-email.php') }}" method="post">
+	<ol>
+		<li>
+			<label for="name">Name<span class="required">*</span></label>
+			<span class="input-field"><span class="icon">u</span><span class="icon required">s</span> <input type="text" name="name" placeholder="NAME"></span>
+		</li>
+		<li>
+			<label for="email">Email</label>
+			<span class="input-field"><span class="icon">a</span><span class="icon required">s</span> <input type="text" name="email" placeholder="EMAIL"></span>
+		</li>
+		<li class="subject">
+			<label for="subject">Subject</label>
+			<select name="subject">
+				<option value="Hello">Just to say hi</option>
+				<option value="Questions" title="If you'd like to ask me something">Questions</option>
+				<option value="Job Proposal" title="Have a job for me">Job/Colaboration Proposal</option>
+				<option value="Project Inquiry" selected="selected" title="You already have a project in mind">Project Inquiry</option>
+				<option value="General" title="Anything else">Other</option>
+			</select>
+		</li>
+		<li class="project">
+			<label for="budget">Project Budget</label>
+			<span class="input-field"><span class="icon">m</span> <input type="text" name="budget" placeholder="PROJECT BUDGET"></span>
+		</li>
+		<li class="project">
+			<label for="deadline">Project Deadline</label>
+			<span class="input-field"><span class="icon">c</span> <input type="text" name="deadline" placeholder="PROJECT DEADLINE"></span>
+		</li>
+		<li class="message">
+			<label for="message">Message / Project Description</label>
+			<span class="input-field"><span class="icon required">s</span><textarea name="message" rows="10" cols="50" placeholder="MESSAGE // Please take the time to provide as many details about the project or your company as possible, such as objectives, audience, message, look and feel, functionality, examples..."></textarea></span>
+		</li>
+	</ol>
+	<p class="send-email">
+		<input type="submit" value="Send Email" class="button">
+	</p>
+</form>

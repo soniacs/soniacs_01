@@ -17,6 +17,14 @@ freezer = Freezer(app)
 def index():
 	return render_template('index.html', pages=pages)
 
+@app.route('/contact/')
+def contact():
+	return render_template('contact.html', pages=pages)
+
+@app.route('/<path:path>/')
+def page(path):
+	page = pages.get_or_404(path)
+	return render_template('email-submit.html', page=page)
 
 if __name__ == '__main__':
 	if len(sys.argv) > 1 and sys.argv[1] == "build":
