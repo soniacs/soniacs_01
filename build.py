@@ -21,6 +21,10 @@ def index():
 def projects():
 	return render_template('projects.html', pages=pages)
 
+@app.route('/notes/')
+def notes():
+	return render_template('notes.html', pages=pages)
+
 @app.route('/contact/')
 def contact():
 	return render_template('contact.html', pages=pages)
@@ -32,6 +36,8 @@ def page(path):
 		template = page.meta.get('template', 'email-submit.html')
 	elif path.startswith('projects'):
 		template = page.meta.get('template', 'project.html')
+	elif path.startswith('notes'):
+		template = page.meta.get('template', 'note.html')
 	return render_template(template, page=page)
 
 '''

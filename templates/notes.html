@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body_class %}notes{% endblock body_class %}
+
+{% block body %}
+	{% include '_header.html' %}
+
+	<div class="site-content">
+		<div class="container">
+			<div class="header-img"></div>
+			<h2>- Notes -</h2>
+			<p class="header-intro">Experiments and code snippets.</p>
+
+			{% block content %}
+				{% for page in pages if page.path.startswith('notes') %}
+				<article>
+						<h3><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h3>
+						<div class="note-description">{{ page.description }}</div>
+					</div>
+				</article>
+				{% endfor %}
+			{% endblock content %}
+		</div>
+	</div>
+
+	{% include '_footer.html' %}
+{% endblock body %}

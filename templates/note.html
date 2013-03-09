@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body_class %}project{% endblock body_class %}
+
+{% block body %}
+	{% include '_header.html' %}
+
+	<div class="site-content">
+		<div class="container">
+			{% block content %}
+				<h2>{{ page.title }}</h2>
+
+				<p class="note-intro">{{ page.description }}</p>
+
+				{{ page.html|safe }}
+
+			{% endblock content %}
+		</div>
+	</div>
+
+	{% include '_footer.html' %}
+{% endblock body %}
