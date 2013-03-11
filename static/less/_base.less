@@ -1,0 +1,149 @@
+// BODY ELEMENTS
+// ---------------------------
+	* {
+		.box-sizing(border-box);
+	}
+	body {
+		background: @bodyBackground;
+		color: @bodyColor;
+		font-family: @serifFont;
+		font-size: @baseFontSize;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+	}
+	div {}
+	hr {}
+	img {}
+	a {
+		.transition(0.4s, ease-out);
+		.link();
+		text-decoration: none;
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	.icon {
+		font-family: @iconFont;
+		font-weight: normal;
+		text-transform: none;
+		font-style: normal;
+	}
+
+// HEADINGS
+// ---------------------------
+
+	h1, h2, h3, h4, h5, h6 {}
+	h1 {}
+	h2 {
+		font-size: 2.5em;
+		font-family: @sansFont;
+		text-transform: uppercase;
+	}
+	h3 {
+		font-size: 1.5em;
+		font-style: italic;
+		margin: 1em 0;
+	}
+	h4 {}
+	h5 {}
+	h6 {}
+
+// PARAGRAPHS
+// ---------------------------
+
+	// First Paragraph
+	p {
+		margin: 1em 0;
+	}
+
+	// Seccond Paragraph
+	abbr {}
+	b {}
+
+	// Blockquote
+	blockquote {}
+	cite {}
+
+	// Third Paragraph
+	dfn {}
+	del {}
+	em {}
+	i {}
+	strong {}
+	ins {}
+	small {}
+
+	// Quote
+	q {}
+
+	// Fourth Paragraph
+	sub {}
+	sup {}
+
+// LISTS
+// ---------------------------
+
+	// All Lists
+	dl, ol, ul { 
+		margin: 1em 0;
+	}
+	li{ list-style-position: inside; }
+
+	// Definition Lists
+	dl {}
+	dt {}
+	dd {}
+
+	// Ordered Lists
+	ol {}
+	ol li {}
+
+	// Unordered Lists
+	ul {}
+	ul li {}
+
+// FORMS
+// ---------------------------
+
+	form {}
+	fieldset {}
+	legend {}
+	label {}
+
+	// Inputs
+	input {}
+	textarea {}
+
+	// Other
+	select {}
+	optgroup {}
+
+// TABLES
+// ---------------------------
+
+	table {}
+	caption {}
+	tr {}
+
+	// Head
+	thead {}
+	th {}
+
+	// Body
+	tbody {}
+	td {}
+
+	// Foot
+	tfoot {}
+
+// OTHER
+// ---------------------------
+
+	address {}
+	code {}
+	samp {}
+	pre {}
+
+	kbd {}
+	var {}

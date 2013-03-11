@@ -40,13 +40,6 @@ def page(path):
 		template = page.meta.get('template', 'note.html')
 	return render_template(template, page=page)
 
-'''
-@app.route('/<path:path>/')
-def contact(path):
-	page = (p for p in pages if p.path.startswith(str(contact)))
-	return render_template('email-submit.html', page=page)
-'''
-
 if __name__ == '__main__':
 	if len(sys.argv) > 1 and sys.argv[1] == "build":
 		freezer.freeze()

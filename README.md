@@ -11,7 +11,7 @@ Based on this tutorial: https://nicolas.perriault.net/code/2012/dead-easy-yet-po
 	pip install Flask Frozen-Flask Flask-Flatpages
 
 ## Project Start
-	source Envs/soniacs/activate
+	source Envs/soniacs/bin/activate
 	cd Sites/dev/soniacs
 	python build.py
 

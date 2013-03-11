@@ -3,22 +3,35 @@
 {% block body_class %}home{% endblock body_class %}
 
 {% block body %}
-	<header class="home-intro">
+	<div class="home-intro">
 		<div class="container">
-			<h1>Hi!</h1>
-			<p>I'm Sonia. I design &amp; develop<br>simple &amp; easy to use interfaces.</p>
-			{% include '_nav.html' %}
+			<div class="intro-graphic"><div id="design"></div><div id="intro"></div><div id="build"></div></div>
+			<div class="intro-text">
+				<p>Hi, I'm Sonia. I design &amp; develop<br>simple &amp; easy to use interfaces.</p>
+				{% include '_nav.html' %}
+			</div>
 		</div>
-	</header>
+		<div class="intro-background" id="background"></div>
+	</div>
 	<div class="site-content">
 		<div class="container">
-			<div class="header-img"></div>
-			<h2>- About Me -</h2>
+			<header class="section-heading">
+				<div id="about" class="header-img"></div>
+				<h2>- About -</h2>
+			</header>
 
-			<p>I come from graphic design but I like to code and build things a little bit more. Most of my experience is in frontend development (HTML5, CSS3, JavaScript) but I also have some basic knowledge of PHP and Python. I'm not afraid of code. And as design goes, I like it simple.</p>
+			<div class="text">
+				<p>I started in graphic design but I like to code and build things a little bit more. Most of my experience is in frontend development (HTML5, CSS3, JavaScript) and I have basic knowledge of PHP and Python. This means I can turn your ideas into pretty fancy interactive things.</p>
 
-			<p>I live in Porto, Portugal and I'm available to work on small to medium size projects, near home or very, very far. If you'd like to work with me, please <a href ="">contact me</a>. I'll be happy to answer any questions you may have.</p>
+				<h3>Contact</h3>
+
+				<p>I'm based in Porto, Portugal and I'm available to work on small to medium size projects, from nearby or far, far away. If you'd like to work with me, you can <a href ="">inquiry me about a project</a>. I'll be happy to answer your questions.</p>
+			</div>
 		</div>
 	</div>
 	{% include '_footer.html' %}
 {% endblock body %}
+{% block js_footer %}
+	{{ super() }}
+	<script src="{{ url_for('static', filename='js/home-ck.js') }}"></script>
+{% endblock js_footer %}

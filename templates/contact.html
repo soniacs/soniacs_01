@@ -7,9 +7,10 @@
 
 	<div class="site-content">
 		<div class="container">
-			<div class="header-img"></div>
-			<h2>- Get in Touch -</h2>
-			<p class="header-intro">Say "Hi" or inquire me about a project you have in mind.</p>
+			<div class="section-heading">
+				<div id="contact" class="header-img"></div>
+				<h2>- Get in Touch -</h2>
+			</div>
 
 			{% block content %}
 				{% include "_contact-form.html" %}
@@ -18,3 +19,7 @@
 	</div>
 	{% include '_footer.html' %}
 {% endblock body %}
+{% block js_footer %}
+	{{ super() }}
+	<script src="{{ url_for('static', filename='js/contact-ck.js') }}"></script>
+{% endblock js_footer %}
