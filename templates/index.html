@@ -5,7 +5,9 @@
 {% block body %}
 	<div class="home-intro">
 		<div class="container">
-			<div class="intro-graphic"><div id="design"></div><div id="intro"></div><div id="build"></div></div>
+			<div class="intro-graphic">
+				{% include 'svg/intro.svg' %}
+			</div>
 			<div class="intro-text">
 				<p>Hi, I'm Sonia. I design &amp; develop<br>simple &amp; easy to use interfaces.</p>
 				{% include '_nav.html' %}
@@ -16,7 +18,9 @@
 	<div class="site-content">
 		<div class="container">
 			<header class="section-heading">
-				<div id="about" class="header-img"></div>
+				<div id="about" class="header-img">
+					{% include 'svg/about.svg' %}
+				</div>
 				<h2>- About -</h2>
 			</header>
 

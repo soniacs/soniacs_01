@@ -21,9 +21,11 @@
 	@altSalmon: #FFAB86;
 	@yellow2: #F0CB47;
 
-// COLORS
-// ---------------------------
-	@homeColor: @altYellow;
+
+
+	
+
+
 
 
 // TYPOGRAPHY
@@ -47,7 +49,6 @@
 
 // BACKGROUNDS
 // ---------------------------
-
 	@bodyBackground: #F9F9F9;
 
 
@@ -61,8 +62,58 @@
 	@footerColor: lighten(@gray, 10%);
 
 
+// SECTIONS COLORS
+// ---------------------------
+	@homeColor: @altYellow;
+	@contactColor: @pink;
 
-// BUTTONS
+	.dark-header (){
+		background: @darkBlue;
+		border-bottom-color: fadeout(white, 90%);
+		color: fadeout(@lightTextColor,65%);
+
+		a{
+			color: fadeout(@lightTextColor,65%);
+
+			&:hover{
+				color: fadein(@lightTextColor,50%);
+			}
+		}
+	}
+	.dark-content (){
+		background: @darkBlue;
+		color: fadeout(@lightTextColor,30%);
+
+		h2{
+			color: fadein(@lightTextColor,20%);
+		}
+	}
+	.dark-footer (){
+		background: @darkBlue;
+		color: fadeout(@lightTextColor,75%);
+		a{
+			color: fadeout(@lightTextColor,75%);
+		}
+		.tooltip{
+			background-color: fadeout(@lightTextColor,75%);
+
+			&:after{
+				border-top-color: fadeout(@lightTextColor,75%);
+			}
+		}
+	}
+	.dark-body (){
+		.site-content{
+			.dark-content();
+		}
+		.site-footer{
+			.dark-footer();
+		}
+	}
+
+
+
+// LINKS
 // ---------------------------
 
 	.link (@color: @bodyColor){
@@ -73,26 +124,28 @@
 		}
 	}
 
-
-
 // BUTTONS
 // ---------------------------
 	.buttons (@color: @bodyColor, @background: @lightGray){
 		background: @background;
 		color: @color;
+		cursor: pointer;
 		font-size: 0.8em;
+		font-weight: normal;
 		font-family: @sansFont;
-		padding: 0.4em 1.2em 0.3em;
-		border-bottom: 3px solid darken(@background, 30%);
+		padding: 0.5em 1.4em 0.4em;
+		border: none;
+		border-bottom: 3px solid mix(@background, black, 50%);
 		text-decoration: none;
 		text-transform: uppercase;
+		letter-spacing: 0.1em;
 		font-weight: 700;
 		.inline-block();
 		.transition(0s, ease-out);
 
 		&:hover{
 			border-bottom: none;
-			vertical-align: -3px;
+			margin-top: 3px;
 			color: @color;
 		}
 	}
@@ -108,7 +161,7 @@
 	}
 	.grid-margin (@cols, @cols-left){
 		.grid (@cols);
-		margin-left: @colWidth * @cols-left + @gutWidth * (@cols-left - 1)
+		margin-left: @colWidth * @cols-left + @gutWidth * (@cols-left)
 	}
 	.grid-block (@cols){
 		.grid (@cols);
@@ -129,6 +182,8 @@
 		padding: 0;
 		list-style-type: none;
 	}
+
+
 
 
 

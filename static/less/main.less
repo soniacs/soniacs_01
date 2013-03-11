@@ -9,127 +9,179 @@
 
 // LAYOUT
 // ---------------------------
-.container{
-	margin: 0 auto;
-	max-width: 1000px;
-	min-width: 250px;
-	width: 92%;
-}
+	.container{
+		margin: 0 auto;
+		max-width: 1000px;
+		min-width: 250px;
+		width: 92%;
+	}
 
 
 // HEADER & NAVBAR
 // ---------------------------
-.nav{
-	.no-style-list();
-	font-family: @sansFont;
-
-	li{
-		.inline-block();
-		font-size: 0.8em;
-
-		&:after{
-			content: "//";
-			margin: 0 0.5em;
-		}
-		&:last-child:after{
-			content: none;
-			margin: 0;
-		}
-	}
-	a{
+	.nav{
+		.no-style-list();
 		font-family: @sansFont;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
+
+		li{
+			.inline-block();
+			font-size: 0.8em;
+
+			&:after{
+				content: "//";
+				margin: 0 0.5em;
+			}
+			&:last-child:after{
+				content: none;
+				margin: 0;
+			}
+		}
+		a{
+			font-family: @sansFont;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+		}
 	}
-}
 
-.site-header{
-	border-bottom: 1px solid lighten(@gray, 50%);
-	padding: 1em 0;
-	color: @headerColor;
-
-	a{
+	.site-header{
+		border-bottom: 1px solid lighten(@gray, 50%);
+		padding: 1em 0;
 		color: @headerColor;
 
-		&:hover{
-			text-decoration: none;
-			color: darken(@headerColor, 20%);
+		a{
+			color: @headerColor;
+
+			&:hover{
+				text-decoration: none;
+				color: darken(@headerColor, 20%);
+			}
+		}
+
+		.home-link,
+		.nav{
+			.inline-block();
+			vertical-align: middle;
+		}
+
+		.home-link{
+			margin: 0;
+			font-size: 1.2em;
+			line-height: 0.5;
+			padding-top: 3px;
+		}
+
+		.nav{
+			float: right;
 		}
 	}
-
-	.home-link,
-	.nav{
-		.inline-block();
-		vertical-align: middle;
-	}
-
-	.home-link{
-		margin: 0;
-		font-size: 1.2em;
-		line-height: 0.5;
-		padding-top: 3px;
-	}
-
-	.nav{
-		float: right;
-	}
-}
 
 
 // FOOTER
 // ---------------------------
-.site-footer{
-	padding: 6em 0 0.5em;
-	text-align: center;
-	color: @footerColor;
-
-	a{
+	.site-footer{
+		padding: 6em 0 0.5em;
+		text-align: center;
 		color: @footerColor;
 
-		&:hover{
-			color: darken(@footerColor, 30%);
-		}
-	}
-
-	.social-links{
-		.no-style-list();
-
-		li{
-			.inline-block();
-		}
-
 		a{
-			text-decoration: none;
-			font-size: 2.8em;
+			color: @footerColor;
 
 			&:hover{
-				text-decoration: none;
+				color: darken(@footerColor, 30%);
 			}
+		}
+
+		.social-links{
+			.no-style-list();
+			position: relative;
+
+			li{
+				.inline-block();
+			}
+
+			a{
+				text-decoration: none;
+				font-size: 2.8em;
+
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+
+		.tooltip{
+			position:absolute;
+			bottom: 4.2em;
+			left:50%;
+			margin-left: -7.2em;
+			font-size:0.9em;
+			line-height: 1.4;
+			border-radius:5px;
+			background-color: darken(@footerColor, 30%);
+			color: darken(white, 10%);
+			text-align:left;
+			width:15em;
+			display: none;
+
+			&:after{
+				content:'.';
+				border-color: darken(@footerColor, 30%) transparent transparent transparent;
+				border-style: solid;
+				border-width: 10px;
+				height: 0;
+				right: 20px;
+				position: absolute;
+				bottom: -20px;
+				width: 0;
+				color: transparent;
+				right:auto;
+				left:20px;
+			}
+
+			p{
+				font-size:1.05em;
+				margin: 1em;
+			}
+			strong{
+				font-size:0.9em;
+				margin-top:0.3em;
+			}
+
+		}
+
+		.copyright{
+			font-family: @sansFont;
+			font-size: 0.8em;
+			text-transform: uppercase;
 		}
 	}
 
-	.copyright{
-		font-family: @sansFont;
-		font-size: 0.8em;
-		text-transform: uppercase;
-	}
-}
 
 // CONTENT
 // ---------------------------
-.site-content{
-	line-height: 1.5;
-	padding: 5em 0;
-}
-.section-heading{
-	text-align: center;
-	margin-bottom: 3em;
-}
+	.site-content{
+		line-height: 1.5;
+		padding: 5em 0;
+	}
+	.section-heading{
+		text-align: center;
+		margin-bottom: 3em;
+	}
 
 
 // HOME
 // ---------------------------
-.home {
+	.home {
+		.dark-body();
+
+		a{
+			.link(@homeColor);
+		}
+		.text{
+			.grid-margin(8,2);
+			font-size: 1.15em;
+		}
+	}
 
 	.home-intro{
 		background: @homeColor;
@@ -139,7 +191,6 @@
 		.container{
 			padding: 7em 0 6em;
 		}
-
 		p{
 			font-size: 3.3em;
 			line-height: 1.4;
@@ -148,7 +199,6 @@
 			font-family: @sansFont;
 			//text-transform: uppercase;
 		}
-
 		.nav{
 			li{
 				font-size: 1.2em;
@@ -168,39 +218,102 @@
 		}
 	}
 
-	.site-content,
-	.site-footer{
-		background: @darkBlue;
-		color: fadeout(@lightTextColor,30%);
 
-		h2{
-			color: fadeout(@lightTextColor,10%);
-		}
+// PROJECTS
+// ---------------------------
 
-		a{
-			.link(@homeColor);
-		}
-	}
 
-	.site-content{
-	}
+// NOTES
+// ---------------------------
 
-	.text{
-		.grid-margin(8,2);
-		font-size: 1.15em;
-	}
 
-	.site-footer{
-		color: fadeout(@lightTextColor,75%);
+// CONTACT
+// ---------------------------
+	.contact{
+		.dark-body();
 
 		a{
-			color: fadeout(@lightTextColor,75%);
+			.link(@contactColor);
 		}
+		.site-header{
+			.dark-header();
+		}
+
+		form{
+			.grid-margin(8,2);
+
+			ol{
+				background: fadeout(white, 90%);
+				padding:1em;
+				position: relative;
+
+				&:after{
+					content:'.';
+					color:transparent;
+					display:block;
+					border-color: fadeout(white, 90%) transparent transparent transparent;
+					border-style: solid;
+					border-width: 10px;
+					height: 0;
+					left:50%;
+					margin-left:-10px;
+					position: absolute;
+					bottom: -20px;
+					width: 0;
+				}
+			}
+			li{
+				.no-style-list();
+				margin-bottom: 0.5em;
+			}
+			label {
+				margin-bottom: 0.3em;
+				font-family: @sansFont;
+				font-size:0.95em;
+				text-transform:uppercase;
+				font-weight: bold;
+			}
+			.input-field{
+				position: relative;
+				display: block;
+			}
+			.input-field input,
+			.input-field textarea{
+				width: 100%;
+				text-transform: @sansFont;
+				border:1px solid @lightGray;
+				background: darken(white, 10%);
+				padding: 0.4em 0.5em;
+				font-size: 0.9em;
+				color: @darkTextColor;
+			}
+			.required{
+				font-size:1em;
+				color:@pink;
+				position:absolute;
+				top:50%;
+				right:0.5em;
+				margin:-0.75em 0 0;
+			}
+			.message {
+				.required{
+					top:0.25em;
+					margin:0;
+				}
+				.input-field textarea{
+					padding-right: 1.5em;
+				}
+			}
+			.send-email{
+				text-align: center;
+
+				.btn{
+					.buttons(white, @contactColor);
+				}
+			}
+		}
+
 	}
-
-}
-
-
 
 
 

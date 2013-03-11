@@ -1,1 +1,1 @@
-$(document).ready(function(){var e="#14212F",t="#fff",n="#ccc",r="#EBA707",i=25,s=i*2,o=Raphael("projects",50,50),u=o.circle(25,25,25).attr({fill:"#A5D9F2","stroke-width":0})});
+$(document).ready(function(){});
