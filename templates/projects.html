@@ -23,8 +23,8 @@
 
 					<div class="project-info">
 						<h3>{{ page.title }}</h3>
-						<div class="project-description">{{ page.description }}</div>
-						<p class="project-links"><a href="{{ url_for("page", path=page.path) }}">Know More</a> <a href="{{ page.link }}">View Live</a></p>
+						<div class="project-description">{{ page.html|safe }}</div>
+						<p class="project-links"><a href="{{ page.link }}">View Live</a></p>
 					</div>
 				</article>
 				{% endfor %}

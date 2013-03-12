@@ -1,1 +1,1 @@
-$(document).ready(function(){var e=$(window).height();$(".home-intro").height(e)});
+$(document).ready(function(){var e=$(window).height(),t=$(".home-intro .container").height(),n=(e-t)/4;$(".home-intro").height(e).css("padding-top",n);$(".about-link").bind("click",function(e){$("html, body").animate({scrollTop:$("#about").offset().top},1e3);e.preventDefault()})});

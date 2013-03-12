@@ -182,6 +182,9 @@
 			font-size: 1.15em;
 		}
 	}
+	.intro-graphic{
+		opacity:0.9;
+	}
 
 	.home-intro{
 		background: @homeColor;
@@ -189,7 +192,7 @@
 		position: relative;
 
 		.container{
-			padding: 7em 0 6em;
+			padding: 5em 0 5em;
 		}
 		p{
 			font-size: 3.3em;
@@ -198,14 +201,19 @@
 			font-weight: 700;
 			font-family: @sansFont;
 			//text-transform: uppercase;
+			color:fadeout(@darkTextColor, 5%);
 		}
 		.nav{
 			li{
 				font-size: 1.2em;
+				color: fadeout(@darkTextColor, 30%);
 			}
 			a{
-				color: @darkTextColor;
-				
+				color: fadeout(@darkTextColor, 30%);
+				&:hover{
+					color: fadein(@darkTextColor, 25%);
+					text-decoration: none;
+				}
 			}
 		}
 
@@ -221,6 +229,15 @@
 
 // PROJECTS
 // ---------------------------
+.projects{
+
+	.site-content{
+		a{
+			color: darken(@projectsColor, 20%);
+		}
+	}
+	
+}
 
 
 // NOTES
