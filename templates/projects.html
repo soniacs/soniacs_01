@@ -4,15 +4,16 @@
 
 {% block body %}
 	{% include '_header.html' %}
-
 	<div class="site-content">
 		<div class="container">
+			{#
 			<div class="section-heading">
 				<div id="projects" class="header-img">
 					{% include 'svg/projects.svg' %}
 				</div>
 				<h2>- Projects -</h2>
 			</div>
+			#}
 
 			{% block content %}
 				{% for page in pages if page.path.startswith('projects') %}
@@ -24,7 +25,13 @@
 					<div class="project-info">
 						<h3>{{ page.title }}</h3>
 						<div class="project-description">{{ page.html|safe }}</div>
-						<p class="project-links"><a href="{{ page.link }}">View Live</a></p>
+						<p class="project-links">
+							{% if page.link is none %}
+							<em>Coming soon!</em>
+							{% else %}
+							<a href="{{ page.link }}" class="btn" target="_blank">View Live</a>
+							{% endif %}
+						</p>
 					</div>
 				</article>
 				{% endfor %}

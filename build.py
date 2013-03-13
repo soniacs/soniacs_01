@@ -34,8 +34,8 @@ def page(path):
 	page = pages.get_or_404(path)
 	if path.startswith('contact'):
 		template = page.meta.get('template', 'email-submit.html')
-	elif path.startswith('projects'):
-		template = page.meta.get('template', 'project.html')
+#	elif path.startswith('projects'):
+#		template = page.meta.get('template', 'project.html')
 	elif path.startswith('notes'):
 		template = page.meta.get('template', 'note.html')
 	return render_template(template, page=page)

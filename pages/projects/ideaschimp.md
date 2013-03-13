@@ -1,6 +1,6 @@
 title: Ideas Chimp
-link: 
+link:
 listing_img: ideaschimp.png
-date: 2012-06-01
+date: 2013-02-02
 
-IdeasChimp sells startup ideas reports to entrepreneurs. This is a proposal for webdesign.
+Ideaschimp sells startup ideas reports for entrepreneurs.
