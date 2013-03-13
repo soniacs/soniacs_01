@@ -68,6 +68,26 @@
 			font-size: 1.2em;
 			line-height: 0.5;
 			padding-top: 3px;
+
+			.yellow,
+			.green,
+			.blue,
+			.pink{
+				display: none;
+			}
+			.pink{
+				color: @pink;
+			}
+			.yellow{
+				color: @yellow;
+			}
+			.green{
+				color: @green;
+			}
+			.blue{
+				
+				color: @blue;
+			}
 		}
 
 		.nav{
@@ -184,6 +204,10 @@
 	}
 	.intro-graphic{
 		opacity:0.9;
+
+		div{
+			.inline-block();
+		}
 	}
 
 	.home-intro{
@@ -192,7 +216,7 @@
 		position: relative;
 
 		.container{
-			padding: 5em 0 5em;
+			padding: 4em 0 5em;
 		}
 		p{
 			font-size: 3.3em;

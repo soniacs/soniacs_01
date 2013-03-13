@@ -10,6 +10,23 @@ var pink = "#F65D54";
 $(document).ready(function() {
 	$('#last-tweet').hide();
 
+
+	// HEADER HOME LINK
+	$('.home-link').hover(
+		function(){
+			$('.pink').fadeIn(400);
+			$('.yellow').fadeIn(800);
+			$('.green').fadeIn(1200);
+			$('.blue').fadeIn(1600);
+		},
+		function () {
+			$('.blue').fadeOut(300);
+			$('.green').fadeOut(600);
+			$('.yellow').fadeOut(900);
+			$('.pink').fadeOut(1200);
+		}
+	);
+
 	// FOOTER TWITTER TOOLTIP
 	// Get Twitter last post
 	function parseTwitterDate($stamp){
@@ -31,5 +48,7 @@ $(document).ready(function() {
 			$('#last-tweet').fadeOut(200);
 		}
 	);
+
+
 
 });
