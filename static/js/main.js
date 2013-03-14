@@ -6,10 +6,10 @@ var yellow = "#F0AA42";
 var green = "#79B7A8";
 var blue = "#A5D9F2";
 var pink = "#F65D54";
+var orange = "#E37459";
 
 $(document).ready(function() {
 	$('#last-tweet').hide();
-
 
 	// HEADER HOME LINK
 	$('.home-link').hover(
@@ -48,7 +48,5 @@ $(document).ready(function() {
 			$('#last-tweet').fadeOut(200);
 		}
 	);
-
-
 
 });

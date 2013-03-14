@@ -1,6 +1,8 @@
 // COLORS
 // ---------------------------
+	@orange: #E37459;
 	@darkBlue: #14212F;
+
 	@yellow: #F0AA42;
 	@green: #79B7A8;
 	@blue: #A5D9F2;
@@ -9,11 +11,12 @@
 	@lightGray: #ccc;
 	@gray: #666;
 
+
 	// Alternate colors
 	@altGreen: #83BA3A;
 	@altBlue: #72C4C0;
 	@altLightBlue: #A4CECD;
-	@altOrange: #E37459;
+	
 	@altLightGreen: #8BB79C;
 	@altDarkerGreen: #2B9883;
 	@altSalmon: #FFAB86;
@@ -61,9 +64,9 @@
 
 // SECTIONS COLORS
 // ---------------------------
-	@homeColor: @yellow;
-	@contactColor: @pink;
-	@projectsColor: @blue;
+	@mainColor: @orange;
+	@homeColor: @orange;
+	@contactColor: @orange;
 
 	.dark-header (){
 		background: @darkBlue;
@@ -114,7 +117,7 @@
 // LINKS
 // ---------------------------
 
-	.link (@color: @bodyColor){
+	.link (@color: @mainColor){
 		color: @color;
 
 		&:hover{
@@ -132,8 +135,7 @@
 		font-weight: normal;
 		font-family: @sansFont;
 		padding: 0.5em 1.4em 0.4em;
-		border: none;
-		border-bottom: 3px solid mix(@background, black, 50%);
+		border: 2px solid @background;
 		text-decoration: none;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
@@ -142,9 +144,9 @@
 		.transition(0s, ease-out);
 
 		&:hover{
-			border-bottom: none;
-			margin-top: 3px;
 			color: @color;
+			background: transparent;
+			border-color: @color;
 		}
 	}
 

@@ -3,31 +3,53 @@
 {% block body_class %}home{% endblock body_class %}
 
 {% block body %}
-	<div class="home-intro">
+	{% include '_header.html' %}
+	<div class="intro">
 		<div class="container">
-			<div class="intro-graphic"><div id="design"></div><div id="intro"></div><div id="build"></div></div>
+			<div class="intro-graphic" id="intro-graphic"></div>
 			<div class="intro-text">
 				<p>Hi, I'm Sonia. I design &amp; develop<br>simple &amp; easy to use interfaces.</p>
-				{% include '_nav.html' %}
+				<div id="intro-nav">{% include '_nav.html' %}</div>
 			</div>
 		</div>
 		<div class="intro-background" id="background"></div>
 	</div>
-	<div class="site-content" id="about">
+
+	<div class="projects" id="projects">
 		<div class="container">
 			<header class="section-heading">
-				<div id="about" class="header-img">
-					{% include 'svg/about.svg' %}
-				</div>
+				<div id="projects-icon" class="header-img"></div>
+				<h2>- Projects -</h2>
+			</header>
+			{% for page in pages if page.path.startswith('projects') %}<article class="project">
+					<div class="project-img"><img src="{{ url_for('static', filename='img/projects/') }}{{ page.listing_img }}" alt=""></div>
+					<h3>{{ page.title }}</h3>
+					<div class="project-info">
+						<div class="project-description">{{ page.html|safe }}</div>
+						<p class="project-links">
+							{% if page.link is none %}
+							<em>Coming soon!</em>
+							{% else %}
+							<a href="{{ page.link }}" class="btn" target="_blank">View Live</a>
+							{% endif %}
+						</p>
+					</div>
+				</article>{% endfor %}
+		</div>
+	</div>
+
+	<div class="about" id="about">
+		<div class="container">
+			<header class="section-heading">
+				<div id="about-icon" class="header-img"></div>
 				<h2>- About -</h2>
 			</header>
-
 			<div class="text">
 				<p>I started in graphic design but I like to code and build things a little bit more. Most of my experience is in frontend development (HTML5, CSS3, JavaScript) and I have basic knowledge of PHP and Python. This means I can turn your ideas into pretty fancy interactive things.</p>
 
 				<h3>Work</h3>
 
-				<p>You can see some <a href="{{ url_for('projects') }}">links to projects I've worked on</a>, either in just Design or Design and Development. There aren't a lot of pictures because most of my experience is working with code and making things interactive. So you have to click on the links to view the work. I'll be posting more soon.</p>
+				<p>You can see some <a href="" class="projects-link">links to projects I've worked on</a>, either in just Design or Design and Development. There aren't a lot of pictures because most of my experience is working with code and making things interactive. So you have to click on the links to view the work. I'll be posting more soon.</p>
 
 				<h3>Contact</h3>
 
@@ -35,9 +57,11 @@
 			</div>
 		</div>
 	</div>
+
 	{% include '_footer.html' %}
 {% endblock body %}
 {% block js_footer %}
 	{{ super() }}
+	<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/home-ck.js') }}"></script>
 {% endblock js_footer %}
