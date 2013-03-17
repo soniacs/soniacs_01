@@ -1,5 +1,5 @@
 title: Pickipicki
-link: http://pickipicki.com/
+link:
 listing_img: pickipicki.png
 date: 2013-02-01
 
