@@ -35,6 +35,11 @@ def page(path):
 		template = page.meta.get('template', 'note.html')
 	return render_template(template, page=page)
 
+@freezer.register_generator
+def email_sent():
+	yield '/contact/email-not-sent/'
+	yield '/contact/email-sent/'
+
 if __name__ == '__main__':
 	if len(sys.argv) > 1 and sys.argv[1] == "build":
 		freezer.freeze()

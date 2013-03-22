@@ -210,16 +210,21 @@
 			position: relative;
 
 			.container{
-				padding: 2em 0 4em;
+				padding: 1em 0;
 			}
 			p{
-				font-size: 3.3em;
-				line-height: 1.4;
-				margin: 0.5em 0 0.5em;
-				font-weight: 700;
-				font-family: @sansFont;
-				text-transform: uppercase;
+				font-size: 6.5em;
+				line-height: 1;
+				margin: 0 0 0.4em;
+				font-weight: 400;
 				color:fadeout(white, 5%);
+
+				span{
+					font-size: 0.7em;
+					vertical-align: middle;
+					//font-weight: 700;
+					//font-style: italic;
+				}
 			}
 			.nav{
 				li{
@@ -231,6 +236,33 @@
 					&:hover{
 						color: fadein(@darkTextColor, 25%);
 						text-decoration: none;
+					}
+				}
+			}
+			.scroll-down{
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				margin-left: -6em;
+				height: 6em;
+				width: 12em;
+				.border-radius(12em, 0, 0, 12em);
+				background: @bodyBackground;
+				cursor: pointer;
+				text-align: center;
+
+				.symbol{
+					font-size: 7.5em;
+					font-weight: 700;
+					line-height: 0.5;
+					color: @lightGray;
+				}
+
+				&:hover{
+					background: @darkBlue;
+
+					span{
+						color: @bodyBackground;
 					}
 				}
 			}
@@ -397,7 +429,6 @@
 		}
 
 	}
-
 
 
 // RESPONSIVE

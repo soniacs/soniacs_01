@@ -6,13 +6,10 @@
 	{% include '_header.html' %}
 	<div class="intro">
 		<div class="container">
-			<div class="intro-graphic" id="intro-graphic"></div>
-			<div class="intro-text">
-				<p>Hi, I'm Sonia. I design &amp; develop<br>simple &amp; easy to use interfaces.</p>
+				<p class="intro-text">{ <span>Hi, there! I'm Sonia.</span> }</p>
 				<div id="intro-nav">{% include '_nav.html' %}</div>
-			</div>
 		</div>
-		<div class="intro-background" id="background"></div>
+		<div class="scroll-down"><span class="symbol">...</span></div>
 	</div>
 
 	<div class="projects" id="projects">
@@ -22,7 +19,7 @@
 				<h2>- Projects -</h2>
 			</header>
 			{% for page in pages if page.path.startswith('projects') %}<article class="project">
-					<div class="project-img"><img src="{{ url_for('static', filename='img/projects/') }}{{ page.listing_img }}" alt=""></div>
+					<div class="project-img"><img src="{{ url_for('static', filename='img/projects/%s' % page.listing_img) }}" alt=""></div>
 					<h3>{{ page.title }}</h3>
 					<div class="project-info">
 						<div class="project-description">{{ page.html|safe }}</div>
