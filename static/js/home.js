@@ -7,6 +7,9 @@ $(document).ready(function() {
 
 	$('.intro').height( screen_height ).css('padding-top', intro_margin);
 
+	// FIT TEXT
+	$('.intro p').fitText();
+
 	// INTRO HOVERS
 	var default_text = $('.intro-text span').text();
 	var text_container = $('.intro-text span');
@@ -46,7 +49,7 @@ $(document).ready(function() {
 
 	// SMOOTH SCROLLS
 	function smooth_scroll(link, destination){
-			$(link).bind('click',function(event){
+		$(link).bind('click',function(event){
 			$('html, body').animate({
 				scrollTop: $(destination).offset().top
 			}, 1000);
@@ -75,7 +78,8 @@ $(document).ready(function() {
 	);
 
 	// PROJECTS HOVER
-	$('.project-info').hide();
+	//$('.project-info').hide();
+
 	$('.project').hover(
 		function(){
 			$(this).find('.project-info').fadeIn();
@@ -84,6 +88,7 @@ $(document).ready(function() {
 			$(this).find('.project-info').fadeOut();
 		}
 	);
+
 
 	// PROJECTS ICON
 	var projects = Raphael('projects-icon', 70, 70);

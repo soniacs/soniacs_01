@@ -42,11 +42,11 @@
 				<h2>- About -</h2>
 			</header>
 			<div class="text">
-				<p>I started in graphic design but I like to code and build things a little bit more. Most of my experience is in frontend development (HTML5, CSS3, JavaScript) and I have basic knowledge of PHP and Python. This means I can turn your ideas into pretty fancy interactive things.</p>
+				<p>I started in graphic design but I like to build things with code a little bit more. Most of my experience is in frontend development (HTML5, CSS3, JavaScript) and I have basic knowledge of PHP and Python. This means I can turn your ideas into pretty fancy interactive things.</p>
 
 				<h3>Work</h3>
 
-				<p>You can see some <a href="" class="projects-link">links to projects I've worked on</a>, either in just Design or Design and Development. There aren't a lot of pictures because most of my experience is working with code and making things interactive. So you have to click on the links to view the work. I'll be posting more soon.</p>
+				<p>You can see some <a href="" class="projects-link">links to projects I've worked on</a>, either in just Design or Design and Development. I'll be posting more soon.</p>
 
 				<h3>Contact</h3>
 
@@ -60,5 +60,7 @@
 {% block js_footer %}
 	{{ super() }}
 	<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.leanModal.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.fittext-ck.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/home-ck.js') }}"></script>
 {% endblock js_footer %}
