@@ -7,6 +7,9 @@ $(document).ready(function() {
 
 	$('.intro').height( screen_height ).css('padding-top', intro_margin);
 
+	// FIT TEXT
+	$('.intro p').fitText();
+
 	// INTRO HOVERS
 	var default_text = $('.intro-text span').text();
 	var text_container = $('.intro-text span');
@@ -36,7 +39,7 @@ $(document).ready(function() {
 				$(text_container).text(default_text);
 			}
 		);
-	};
+	}
 	intro_text('.about-link', 'I like simple Interfaces.');
 	intro_text('.projects-link', 'I design and code.');
 	intro_text('.contact-link', "Let's get in touch!");
@@ -46,13 +49,13 @@ $(document).ready(function() {
 
 	// SMOOTH SCROLLS
 	function smooth_scroll(link, destination){
-			$(link).bind('click',function(event){
+		$(link).bind('click',function(event){
 			$('html, body').animate({
 				scrollTop: $(destination).offset().top
 			}, 1000);
 			event.preventDefault();
 		});
-	};
+	}
 	smooth_scroll('.scroll-down', '#projects');
 	smooth_scroll('.about-link', '#about');
 	smooth_scroll('.projects-link', '#projects');
@@ -75,7 +78,8 @@ $(document).ready(function() {
 	);
 
 	// PROJECTS HOVER
-	$('.project-info').hide();
+	//$('.project-info').hide();
+
 	$('.project').hover(
 		function(){
 			$(this).find('.project-info').fadeIn();
@@ -85,6 +89,7 @@ $(document).ready(function() {
 		}
 	);
 
+
 	// PROJECTS ICON
 	var projects = Raphael('projects-icon', 70, 70);
 	var projects_icon = projects.path('M30,59 C20,58 11,49 10,39 L17,39 L17,30 L10,30 C11,20 20,11 30,10 L30,17 L39,17 L39,10 C49,11 58,20 60,30 L52,30 L52,39 L59,39 C58,49 49,58 39,60 L39,52 L30,52 Z M31,31 L31,39 L39,39 L39,31 Z M31,31').attr({fill:orange, 'stroke-width':'0'});
@@ -93,12 +98,12 @@ $(document).ready(function() {
 		function(){
 			projects_icon.animate({
 				transform: 'r360'
-			}, 1000)
+			}, 1000);
 		},
 		function(){
 			projects_icon.animate({
 				transform: 'r0'
-			}, 300)
+			}, 300);
 		}
 	);
 
