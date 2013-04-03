@@ -20,6 +20,7 @@
 	{% include '_footer.html' %}
 {% endblock body %}
 {% block js_footer %}
-	{{ super() }}
-	<script src="{{ url_for('static', filename='js/contact-ck.js') }}"></script>
+	{% assets "contact_js" %}
+		<script src="{{ ASSET_URL }}"></script>
+	{% endassets %}
 {% endblock js_footer %}

@@ -7,7 +7,7 @@ https://soniacs.com
 ## Project Setup
 	cd Sites/dev/soniacs
 	virtualenv env
-	env/bin/pip install Flask Frozen-Flask Flask-Flatpages
+	env/bin/pip install -r requirements.txt
 
 ## Run Server
 	chmod a+x build.py

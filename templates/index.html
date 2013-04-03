@@ -18,16 +18,16 @@
 				<div id="projects-icon" class="header-img"></div>
 				<h2>- Projects -</h2>
 			</header>
-			{% for page in pages if page.path.startswith('projects') %}<article class="project">
-					<div class="project-img"><img src="{{ url_for('static', filename='img/projects/%s' % page.listing_img) }}" alt=""></div>
-					<h3>{{ page.title }}</h3>
+			{% for project in projects %}<article class="project">
+					<div class="project-img"><img src="{{ url_for('static', filename='img/projects/%s' % project.listing_img) }}" alt=""></div>
+					<h3>{{ project.title }}</h3>
 					<div class="project-info">
-						<div class="project-description">{{ page.html|safe }}</div>
+						<div class="project-description">{{ project.html|safe }}</div>
 						<p class="project-links">
-							{% if page.link is none %}
+							{% if project.link is none %}
 							<em>In Development</em>
 							{% else %}
-							<a href="{{ page.link }}" class="btn" target="_blank">View Live</a>
+							<a href="{{ project.link }}" class="btn" target="_blank">View Live</a>
 							{% endif %}
 						</p>
 					</div>
@@ -58,9 +58,7 @@
 	{% include '_footer.html' %}
 {% endblock body %}
 {% block js_footer %}
-	{{ super() }}
-	<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.leanModal.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.fittext-ck.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/home-ck.js') }}"></script>
+	{% assets "home_js" %}
+		<script src="{{ ASSET_URL }}"></script>
+	{% endassets %}
 {% endblock js_footer %}

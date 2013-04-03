@@ -1,6 +1,6 @@
 title: Artzila
 link:
 listing_img: artzila.png
-date: 2013-03-01
+published: 3
 
 Artzila sell limited art and photography prints. I took care of web design.
