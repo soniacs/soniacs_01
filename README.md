@@ -2,7 +2,7 @@
 
 It's built with a simple static site generator made with Flask, Frozen-Flask and Flask-Flatpages. [Tutorial here.](https://nicolas.perriault.net/code/2012/dead-easy-yet-powerful-static-website-generator-with-flask/)
 
-https://soniacs.com
+http://soniacs.com
 
 ## Project Setup
 	cd Sites/dev/soniacs
