@@ -77,17 +77,8 @@ $(document).ready(function() {
 		}
 	);
 
-	// PROJECTS HOVER
-	//$('.project-info').hide();
-
-	$('.project').hover(
-		function(){
-			$(this).find('.project-info').fadeIn();
-		},
-		function(){
-			$(this).find('.project-info').fadeOut();
-		}
-	);
+	// PROJECTS
+	$("a[rel*=leanModal]").leanModal({ top : 100, overlay : 0.6});
 
 
 	// PROJECTS ICON

@@ -20,9 +20,12 @@
 			</header>
 			{% for project in projects %}<article class="project">
 					<div class="project-img"><img src="{{ url_for('static', filename='img/projects/%s' % project.listing_img) }}" alt=""></div>
-					<h3>{{ project.title }}</h3>
-					<div class="project-info">
-						<div class="project-description">{{ project.html|safe }}</div>
+					<h3><a href="#project-{{ project.published }}" rel="leanModal">{{ project.title }}</a></h3>
+				</article><div class="project-info" id="project-{{ project.published }}">
+					<div class="project-preview"><img src="{{ url_for('static', filename='img/projects/%s' % project.preview_img) }}"></div><!--
+					--><div class="project-description">
+						<h3>{{ project.title }}</h3>
+						{{ project.html|safe }}
 						<p class="project-links">
 							{% if project.link is none %}
 							<em>In Development</em>
@@ -31,7 +34,7 @@
 							{% endif %}
 						</p>
 					</div>
-				</article>{% endfor %}
+				</div>{% endfor %}
 		</div>
 	</div>
 

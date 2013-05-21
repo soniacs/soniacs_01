@@ -10,6 +10,12 @@
 	.home .projects article{
 		.grid-block (6);
 	}
+	.home .project-preview{
+		.grid-block (7);
+	}
+	.home .project-description{
+		.grid-block (5);
+	}
 }
 @media all and (max-width: @breakpoint_2) {
 	.home .intro {
@@ -19,13 +25,29 @@
 	.contact form{
 		.grid-margin(10,1);
 	}
+	.home .project-preview{
+		.grid-block (12);
+	}
+	.home .project-description{
+		.grid-block (12);
+	}
 }
 @media all and (max-width: @breakpoint_3) {
 	.home .projects article{
-		.grid-block (12);
+		display: block;
+		width: auto;
 	}
 	.home .about .text,
 	.contact form{
 		.grid-margin(12,0);
+	}
+	.home .project-preview{
+		display: block;
+		width: auto;
+	}
+	.home .project-description{
+		display: block;
+		width: auto;
+		margin-left: 0;
 	}
 }
