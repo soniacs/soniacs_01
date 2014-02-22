@@ -4,18 +4,19 @@
 
 // BASE STYLES
 // ---------------------------
-@import '_base.less';
-#lean_overlay {
-	position: fixed;
-	z-index:100;
-	top: 0px;
-	left: 0px;
-	height:100%;
-	width:100%;
-	background: #000;
-	display: none;
-}
+	@import '_base.less';
 
+	// Modal window overlay
+	#lean_overlay {
+		position: fixed;
+		z-index:100;
+		top: 0px;
+		left: 0px;
+		height:100%;
+		width:100%;
+		background: #000;
+		display: none;
+	}
 
 // LAYOUT
 // ---------------------------
@@ -25,7 +26,6 @@
 		min-width: 250px;
 		width: 92%;
 	}
-
 
 // HEADER & NAVBAR
 // ---------------------------
@@ -73,35 +73,34 @@
 			vertical-align: middle;
 		}
 
-		.home-link{
-			margin: 0;
-			font-size: 1.2em;
-			line-height: 0.5;
-			padding-top: 3px;
-
-			.yellow,
-			.green,
-			.blue,
-			.pink{
-				display: none;
-			}
-			.pink{
-				color: @orange;
-			}
-			.yellow{
-				color: @yellow;
-			}
-			.green{
-				color: @green;
-			}
-			.blue{
-				
-				color: @blue;
-			}
-		}
-
 		.nav{
 			float: right;
+		}
+	}
+	.home-link{
+		margin: 0;
+		font-size: 1.2em;
+		line-height: 0.5;
+		padding-top: 3px;
+
+		.yellow,
+		.green,
+		.blue,
+		.pink{
+			display: none;
+		}
+		.pink{
+			color: @orange;
+		}
+		.yellow{
+			color: @yellow;
+		}
+		.green{
+			color: @green;
+		}
+		.blue{
+			
+			color: @blue;
 		}
 	}
 
@@ -118,24 +117,6 @@
 
 			&:hover{
 				color: darken(@footerColor, 30%);
-			}
-		}
-
-		.social-links{
-			.no-style-list();
-			position: relative;
-
-			li{
-				.inline-block();
-			}
-
-			a{
-				text-decoration: none;
-				font-size: 2.8em;
-
-				&:hover{
-					text-decoration: none;
-				}
 			}
 		}
 
@@ -176,14 +157,29 @@
 				font-size:0.9em;
 				margin-top:0.3em;
 			}
+		}
+	}
+	.social-links{
+		.no-style-list();
+		position: relative;
 
+		li{
+			.inline-block();
 		}
 
-		.copyright{
-			font-family: @sansFont;
-			font-size: 0.8em;
-			text-transform: uppercase;
+		a{
+			text-decoration: none;
+			font-size: 2.8em;
+
+			&:hover{
+				text-decoration: none;
+			}
 		}
+	}
+	.copyright{
+		font-family: @sansFont;
+		font-size: 0.8em;
+		text-transform: uppercase;
 	}
 
 
@@ -218,15 +214,22 @@
 			background: @homeColor;
 			text-align: center;
 			position: relative;
-			min-height: 400/unit(@baseFontSize,em);
+			height: 100%;
+			width: 100%;
+			display: table;
 
 			.container{
-				padding: 1em 0;
+				padding: 0;
+				margin: 0;
+				height: 100%;
+				width: 100%;
+				display: table-cell;
+				vertical-align: middle;
 			}
 			p{
 				font-size: 6.5em;
 				line-height: 1;
-				margin: 0 0 0.4em;
+				margin: -0.5em 0 0.4em;
 				font-weight: 400;
 				color:fadeout(white, 5%);
 

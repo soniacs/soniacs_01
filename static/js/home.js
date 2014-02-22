@@ -5,7 +5,7 @@ $(document).ready(function() {
 	var intro_height = $('.intro .container').height();
 	var intro_margin = (screen_height - intro_height)/2.5;
 
-	$('.intro').height( screen_height ).css('padding-top', intro_margin);
+	//$('.intro').height( screen_height ).css('padding-top', intro_margin);
 
 	// FIT TEXT
 	$('.intro p').fitText();
