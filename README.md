@@ -16,3 +16,8 @@ http://soniacs.com
 ## Generate Static Site
 	./build.py build
 
+## Github Pages
+    git checkout gh-pages
+    git push origin gh-pages
+    http://soniacs.github.io/soniacs_01/
+
