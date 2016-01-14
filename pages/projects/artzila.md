@@ -1,5 +1,5 @@
 title: Artzila
-link:
+link: http://artzila.com/
 listing_img: artzila.png
 preview_img: artzila_preview.png
 published: 3

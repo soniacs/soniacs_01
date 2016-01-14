@@ -1,0 +1,30 @@
+<div class="projects" id="projects">
+    <div class="container">
+        <header class="section-heading">
+            <div id="projects-icon" class="header-img"></div>
+            <h2>- Projects -</h2>
+        </header>
+        {% for project in projects %}
+            <article class="project">
+                <a href="#project-{{ project.published }}" rel="leanModal">
+                    <div class="project-img"><img src="{{ url_for('static', filename='img/projects/%s' % project.listing_img) }}" alt=""></div>
+                    <h3>{{ project.title }}</h3>
+                </a>
+            </article>
+            <div class="project-info" id="project-{{ project.published }}">
+                <div class="project-preview"><img src="{{ url_for('static', filename='img/projects/%s' % project.preview_img) }}"></div><!--
+                --><div class="project-description">
+                    <h3>{{ project.title }}</h3>
+                    {{ project.html|safe }}
+                    <p class="project-links">
+                        {% if project.link is none %}
+                        <em>In Development</em>
+                        {% else %}
+                        <a href="{{ project.link }}" class="btn" target="_blank">View Live</a>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

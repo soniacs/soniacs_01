@@ -1,5 +1,5 @@
 title: Pickipicki
-link:
+link: http://pickipicki.com/
 listing_img: pickipicki.png
 preview_img: pickipicki_preview.png
 published: 4

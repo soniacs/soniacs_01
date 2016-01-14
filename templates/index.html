@@ -12,51 +12,9 @@
 		<div class="scroll-down"><span class="symbol">...</span></div>
 	</div>
 
-	<div class="projects" id="projects">
-		<div class="container">
-			<header class="section-heading">
-				<div id="projects-icon" class="header-img"></div>
-				<h2>- Projects -</h2>
-			</header>
-			{% for project in projects %}<article class="project">
-					<div class="project-img"><img src="{{ url_for('static', filename='img/projects/%s' % project.listing_img) }}" alt=""></div>
-					<h3><a href="#project-{{ project.published }}" rel="leanModal">{{ project.title }}</a></h3>
-				</article><div class="project-info" id="project-{{ project.published }}">
-					<div class="project-preview"><img src="{{ url_for('static', filename='img/projects/%s' % project.preview_img) }}"></div><!--
-					--><div class="project-description">
-						<h3>{{ project.title }}</h3>
-						{{ project.html|safe }}
-						<p class="project-links">
-							{% if project.link is none %}
-							<em>In Development</em>
-							{% else %}
-							<a href="{{ project.link }}" class="btn" target="_blank">View Live</a>
-							{% endif %}
-						</p>
-					</div>
-				</div>{% endfor %}
-		</div>
-	</div>
+	{% include '_projects.html' %}
 
-	<div class="about" id="about">
-		<div class="container">
-			<header class="section-heading">
-				<div id="about-icon" class="header-img"></div>
-				<h2>- About -</h2>
-			</header>
-			<div class="text">
-				<p>I started in graphic design but I like to build things with code a little bit more. Most of my experience is in frontend development (HTML5, CSS3, JavaScript) and I have basic knowledge of PHP and Python. This means I can turn your ideas into pretty fancy interactive things.</p>
-
-				<h3>Work</h3>
-
-				<p>You can see some <a href="" class="projects-link">links to projects I've worked on</a>, either in just Design or Design and Development. I'll be posting more soon.</p>
-
-				<h3>Contact</h3>
-
-				<p>I'm based in Porto, Portugal and I'm available to work on small to medium size projects, from nearby or far, far away. If you'd like to work with me, you can <a href ="{{ url_for('contact') }}">inquiry me about a project</a>. I'll be happy to answer your questions.</p>
-			</div>
-		</div>
-	</div>
+	{% include '_about.html' %}
 
 	{% include '_footer.html' %}
 {% endblock body %}
